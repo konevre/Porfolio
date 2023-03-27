@@ -3,18 +3,25 @@
 @tailwind components;
 
 html {
-    @apply h-full;
+    @apply h-screen;
     @apply font-SansPro;
     @apply bg-custom-black;
     @apply text-custom-white;
 }
 
 body {
-    @apply h-full;
-    @apply md:overflow-hidden overflow-y-visible overflow-x-hidden;
+    @apply h-screen;
+    /* @apply overflow-hidden; */
+    /* @apply overflow-y-scroll overflow-x-hidden; */
+
 }
 
 #root {
-    @apply h-full;
+    @apply h-screen;
+    /* @apply md:overflow-hidden overflow-y-visible overflow-x-hidden; */
+    /* @apply snap-y snap-mandatory; */
+    @apply scroll-smooth;
+    @apply overflow-y-auto ;
+    @apply scrollbar-hide;
 }
 

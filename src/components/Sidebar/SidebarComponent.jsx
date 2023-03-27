@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+// import { Link } from "react-router-dom";
+import { Link } from "react-scroll";
 
 import ScrollDownComponent from "./ScrollDownComponent";
 import ScrollUpComponent from "./ScrollUpComponent";
@@ -38,11 +40,10 @@ const SidebarComponent = () => {
         setPage(0);
     };
 
-    console.log(activePage);
     // TODO - refactor tags
     return (
         <>
-            <nav className="fixed right-10 top-1/3 hidden gap-x-3 lg:flex">
+            <nav className="fixed right-10 top-1/3 z-10 hidden gap-x-3 lg:flex">
                 <div className="absolute right-0 block h-full w-px bg-custom-white opacity-40"></div>
                 <ul className="flex flex-col">
                     <li className="h-12">
@@ -51,7 +52,7 @@ const SidebarComponent = () => {
                             onMouseEnter={handleMouseEnter}
                             onMouseLeave={handleMouseLeave}
                             id="0"
-                            href="#"
+                            href="#home"
                             className="flex h-full items-center justify-center text-sm"
                         >
                             00
@@ -63,7 +64,7 @@ const SidebarComponent = () => {
                             onMouseEnter={handleMouseEnter}
                             onMouseLeave={handleMouseLeave}
                             id="1"
-                            href="#"
+                            href="#about"
                             className="flex h-full items-center justify-center text-sm font-normal"
                         >
                             01
@@ -75,7 +76,7 @@ const SidebarComponent = () => {
                             onMouseEnter={handleMouseEnter}
                             onMouseLeave={handleMouseLeave}
                             id="2"
-                            href="#"
+                            href="#skills"
                             className="flex h-full items-center justify-center text-sm font-normal"
                         >
                             02
@@ -87,7 +88,7 @@ const SidebarComponent = () => {
                             onMouseEnter={handleMouseEnter}
                             onMouseLeave={handleMouseLeave}
                             id="3"
-                            href="#"
+                            href="#projects"
                             className="flex h-full items-center justify-center text-sm font-normal"
                         >
                             03

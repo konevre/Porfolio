@@ -12,6 +12,7 @@ module.exports = {
                 "custom-white": "#EFF8FF",
                 "custom-black": "#141416",
                 "custom-purple": "#9C27B0",
+                "custom-grey": "#A5ABB1",
             },
             maxWidth: {
                 container: "1440px",
@@ -29,5 +30,5 @@ module.exports = {
             },
         },
     },
-    plugins: [],
+    plugins: [require("tailwind-scrollbar-hide")],
 };
