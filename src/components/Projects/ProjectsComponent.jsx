@@ -7,19 +7,17 @@ import "swiper/css";
 import HeroSlideComponent from "./Slides/HeroSlideComponent";
 import LinesComponent from "../UI/linesComponent";
 import TodoProjectComponent from "./Slides/TodoProjectComponent";
+import WeatherProject from "./Slides/WeatherProject";
 
 const ProjectsComponent = () => {
     return (
         <section id="projects" className="relative h-screen w-screen">
             <Swiper
-                spaceBetween={50}
                 speed={2000}
                 slidesPerView={1}
                 modules={[Mousewheel]}
                 direction="horizontal"
                 mousewheel={true}
-                onSlideChange={() => console.log("slide change")}
-                onSwiper={(swiper) => console.log(swiper.mousewheel)}
             >
                 <SwiperSlide>
                     <HeroSlideComponent />
@@ -28,7 +26,7 @@ const ProjectsComponent = () => {
                     <TodoProjectComponent />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <HeroSlideComponent />
+                    <WeatherProject />
                 </SwiperSlide>
             </Swiper>
             <LinesComponent dir="right" />

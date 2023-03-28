@@ -11,7 +11,6 @@ const SkillsComponent = () => {
 
     const skillsFirst = firstRow.map((img, i) => {
         const delay = i > 1 ? +`0.${(i / 2) * 10}` : 0.05;
-        console.log(delay);
         return (
             <motion.div
                 initial="hidden"

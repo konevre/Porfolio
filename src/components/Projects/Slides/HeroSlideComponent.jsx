@@ -13,7 +13,7 @@ import sphereLg from "../../../resources/icons/projects/sphere_lg.png";
 const HeroSlideComponent = () => {
     const { wobbleText } = useWobble("Portfolio & Previous Projects", 20);
     return (
-        <section className="relative flex h-screen snap-center snap-always flex-col items-center justify-center gap-y-5  p-8">
+        <section className="relative flex h-screen snap-center snap-always flex-col items-center justify-center gap-y-5 p-8">
             <motion.h2
                 initial="hidden"
                 whileInView="visible"
