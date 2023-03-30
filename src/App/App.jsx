@@ -10,6 +10,7 @@ import HomePage from "../pages/HomePage";
 import AboutPage from "../pages/AboutPage";
 import SkillsPage from "../pages/SkillsPage";
 import ProjectsPage from "../pages/ProjectsPage";
+import ContactPage from "../pages/ContactPage";
 
 const App = () => {
     // // const { scrollYProgress } = useScroll();
@@ -22,7 +23,7 @@ const App = () => {
             <GitLinkComponent />
             <ReactFullpage
                 licenseKey={"32LN8-21K48-3LGJ9-JQP1J-SOPTO"}
-                anchors={["home", "about", "skills", "projects"]}
+                anchors={["home", "about", "skills", "projects", "contact"]}
                 animateAnchor={true}
                 easingcss3={"cubic-bezier(0.88, 0, 0.265, 1)"}
                 scrollingSpeed={1200}
@@ -45,7 +46,7 @@ const App = () => {
                             <AboutPage state={state} />
                             <SkillsPage state={state} />
                             <ProjectsPage />
-                            {/* <SkillsPage /> */}
+                            <ContactPage state={state} />
                         </ReactFullpage.Wrapper>
                     );
                 }}

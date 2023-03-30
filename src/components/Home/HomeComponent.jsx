@@ -17,8 +17,6 @@ import {
 } from "../../utils/variants/homeVariants";
 
 const HomeComponent = ({ state }) => {
-    console.log(state);
-
     const { animation, initial } = useHomeAnimation(state);
 
     const { wobbleText } = useWobble("Front-End Software Developer", 18);

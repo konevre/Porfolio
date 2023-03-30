@@ -55,7 +55,7 @@ const SkillsComponent = ({ state }) => {
     });
     return (
         <div data-anchor="skills" className="section">
-            <motion.section className="relative flex h-screen snap-center snap-always flex-col items-center justify-center gap-y-3 p-8">
+            <motion.section className="relative flex h-screen flex-col items-center justify-center gap-y-3 p-8">
                 <motion.h3
                     variants={h3Variant(0.6)}
                     initial={initial}

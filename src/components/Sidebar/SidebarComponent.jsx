@@ -123,13 +123,16 @@ const SidebarComponent = () => {
                             03
                         </a>
                     </li>
-                    <li className="flex h-12 items-center justify-center">
+                    <li
+                        data-menuanchor="contact"
+                        className="flex h-12 items-center justify-center"
+                    >
                         <a
                             onClick={handleClick}
                             onMouseEnter={handleMouseEnter}
                             onMouseLeave={handleMouseLeave}
                             id="4"
-                            href="#"
+                            href="#contact"
                             className="flex h-full items-center justify-center text-sm font-normal"
                         >
                             04
