@@ -13,13 +13,13 @@ const useWobble = (text, br) => {
         return letter !== " " ? (
             <span
                 onMouseOver={() => handleMouseOver(i)}
-                key={i}
+                key={`${letter}${i}`}
                 className={`${activeLetter} inline-block`}
             >
                 {letter}
             </span>
         ) : i === br ? (
-            <br />
+            <br key={`${letter}${i}`} />
         ) : (
             " "
         );

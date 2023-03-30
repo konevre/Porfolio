@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 // import { Link } from "react-router-dom";
 import { Link } from "react-scroll";
 
@@ -7,87 +8,115 @@ import ScrollUpComponent from "./ScrollUpComponent";
 
 const SidebarComponent = () => {
     const translateObj = {
-        0: "translate-y-0",
-        1: "translate-y-12",
-        2: "translate-y-24",
-        3: "translate-y-36",
-        4: "translate-y-48",
+        home: "translate-y-0",
+        about: "translate-y-12",
+        skills: "translate-y-24",
+        projects: "translate-y-36",
+        contact: "translate-y-48",
     };
 
-    const [activePage, setPage] = useState(0);
-    const [mouse, onMouse] = useState("translate-y-0");
+    const [activePage, setPage] = useState(window.location.hash.slice(1));
+    const [mouse, onMouse] = useState(
+        translateObj[window.location.hash.slice(1)]
+    );
 
     useEffect(() => {
-        onMouse(translateObj[activePage]);
-    }, [activePage]);
+        window.addEventListener("hashchange", () => {
+            const hash = window.location.hash.slice(1);
+            setPage(hash);
+            onMouse(translateObj[hash]);
+        });
+
+        return () => {
+            window.removeEventListener("hashchange", () => {
+                const hash = window.location.hash.slice(1);
+                setPage(hash);
+                onMouse(translateObj[hash]);
+            });
+        };
+    }, []);
 
     const handleClick = (e) => {
-        setPage(+e.target.id);
+        setPage(e.target.title);
     };
     const handleMouseLeave = () => {
         onMouse(translateObj[activePage]);
     };
     const handleMouseEnter = (e) => {
-        const yValue = +e.target.id;
+        const yValue = e.target.title;
         onMouse(translateObj[yValue]);
     };
 
-    const handleScrollDown = () => {
-        setPage((prevState) => prevState + 1);
-    };
+    // TODO
+    // const handleScrollDown = () => {
+    //     setPage((prevState) => prevState + 1);
+    // };
 
-    const handleScrollUp = () => {
-        setPage(0);
-    };
+    // const handleScrollUp = () => {
+    //     setPage(0);
+    // };
 
     // TODO - refactor tags
     return (
         <>
             <nav className="fixed right-10 top-1/3 z-10 hidden gap-x-3 lg:flex">
                 <div className="absolute right-0 block h-full w-px bg-custom-white opacity-40"></div>
-                <ul className="flex flex-col">
-                    <li className="h-12">
+                <ul id="myMenu" className="flex flex-col">
+                    <li data-menuanchor="home" className="h-12">
                         <a
                             onClick={handleClick}
                             onMouseEnter={handleMouseEnter}
                             onMouseLeave={handleMouseLeave}
                             id="0"
+                            title="home"
                             href="#home"
                             className="flex h-full items-center justify-center text-sm"
                         >
                             00
                         </a>
                     </li>
-                    <li className="flex h-12 items-center justify-center text-sm">
+                    <li
+                        data-menuanchor="about"
+                        className="flex h-12 items-center justify-center text-sm"
+                    >
                         <a
                             onClick={handleClick}
                             onMouseEnter={handleMouseEnter}
                             onMouseLeave={handleMouseLeave}
                             id="1"
                             href="#about"
+                            title="about"
                             className="flex h-full items-center justify-center text-sm font-normal"
                         >
                             01
                         </a>
                     </li>
-                    <li className="flex h-12 items-center justify-center">
+                    <li
+                        data-menuanchor="skills"
+                        className="flex h-12 items-center justify-center"
+                    >
                         <a
                             onClick={handleClick}
                             onMouseEnter={handleMouseEnter}
                             onMouseLeave={handleMouseLeave}
                             id="2"
+                            title="skills"
                             href="#skills"
                             className="flex h-full items-center justify-center text-sm font-normal"
                         >
                             02
                         </a>
                     </li>
-                    <li className="flex h-12 items-center justify-center text-sm">
+                    <li
+                        data-menuanchor="projects"
+                        className="flex h-12 items-center justify-center text-sm"
+                    >
                         <a
                             onClick={handleClick}
                             onMouseEnter={handleMouseEnter}
                             onMouseLeave={handleMouseLeave}
                             id="3"
+                            title="projects"
                             href="#projects"
                             className="flex h-full items-center justify-center text-sm font-normal"
                         >
@@ -111,11 +140,12 @@ const SidebarComponent = () => {
                     className={`${mouse} h-12 w-0.5 bg-custom-white transition duration-1000 ease-in-out`}
                 ></div>
             </nav>
-            {activePage === 4 ? (
+            {/* TODO */}
+            {/* {activePage === 4 ? (
                 <ScrollUpComponent handleScrollUp={handleScrollUp} />
             ) : (
                 <ScrollDownComponent handleScrollDown={handleScrollDown} />
-            )}
+            )} */}
         </>
     );
 };

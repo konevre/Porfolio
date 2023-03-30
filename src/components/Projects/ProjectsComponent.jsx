@@ -11,26 +11,20 @@ import WeatherProject from "./Slides/WeatherProject";
 
 const ProjectsComponent = () => {
     return (
-        <section id="projects" className="relative h-screen w-screen">
-            <Swiper
-                speed={2000}
-                slidesPerView={1}
-                modules={[Mousewheel]}
-                direction="horizontal"
-                mousewheel={true}
-            >
-                <SwiperSlide>
+        <div className="section" data-anchor="projects">
+            <section>
+                <div className="slide">
                     <HeroSlideComponent />
-                </SwiperSlide>
-                <SwiperSlide>
+                </div>
+                <div className="slide">
                     <TodoProjectComponent />
-                </SwiperSlide>
-                <SwiperSlide>
+                </div>
+                <div className="slide">
                     <WeatherProject />
-                </SwiperSlide>
-            </Swiper>
+                </div>
+            </section>
             <LinesComponent dir="right" />
-        </section>
+        </div>
     );
 };
 
