@@ -1,0 +1,100 @@
+@media (min-width: 992px) {
+    .fp-slidesNav.fp-bottom {
+        bottom: 50px !important;
+   }
+}
+.fp-slidesNav.fp-bottom ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.fp-slidesNav.fp-bottom ul li a.active span {
+    width: 14px;
+    height: 14px;
+}
+.fp-slidesNav.fp-bottom ul li a span {
+    background-color: #444;
+    width: 6px;
+    height: 6px;
+}
+
+.nav__wrapper {
+	 display: none;
+}
+ @media (min-width: 992px) {
+	 .nav__wrapper {
+		 display: block;
+	}
+}
+ .nav__wrapper #side_nav {
+	 list-style: none;
+	 padding: 0;
+	 margin: 0;
+	 position: relative;
+}
+ .nav__wrapper #side_nav:before {
+	 content: '';
+	 position: absolute;
+	 top: 0;
+	 right: 0;
+	 width: 1px;
+	 border-radius: 50px;
+	 height: 100%;
+	 display: block;
+	 opacity: 0.4;
+	 background-color: aliceblue;
+}
+ .nav__wrapper #side_nav li {
+	 transition: all 0.5s ease-in-out;
+}
+ .nav__wrapper #side_nav li a {
+	 display: block;
+	 width: 50px;
+	 height: 50px;
+	 display: flex;
+	 align-items: center;
+	 justify-content: center;
+	 border-radius: 50%;
+	 text-decoration: none;
+	 font-family: 'Source Sans Pro', sans-serif;
+	 font-size: 13px;
+	 color: aliceblue;
+	 transition: all 0.5s ease-in-out;
+}
+ .nav__wrapper #side_nav li:first-child.passedSection:hover ~ .line {
+	 transform: translateY(0);
+}
+ .nav__wrapper #side_nav li:nth-child(2):hover ~ .line, .nav__wrapper #side_nav li:nth-child(2).active ~ .line {
+	 transform: translateY(50px);
+}
+ .nav__wrapper #side_nav li:nth-child(2).passedSection:hover ~ .line {
+	 transform: translateY(50px);
+}
+ .nav__wrapper #side_nav li:nth-child(3):hover ~ .line, .nav__wrapper #side_nav li:nth-child(3).active ~ .line {
+	 transform: translateY(100px);
+}
+ .nav__wrapper #side_nav li:nth-child(3).passedSection:hover ~ .line {
+	 transform: translateY(100px);
+}
+ .nav__wrapper #side_nav li:nth-child(4):hover ~ .line, .nav__wrapper #side_nav li:nth-child(4).active ~ .line {
+	 transform: translateY(150px);
+}
+ .nav__wrapper #side_nav li:nth-child(4).passedSection:hover ~ .line {
+	 transform: translateY(150px);
+}
+ .nav__wrapper #side_nav li:nth-child(5):hover ~ .line, .nav__wrapper #side_nav li:nth-child(5).active ~ .line {
+	 transform: translateY(200px);
+}
+ .nav__wrapper #side_nav li:nth-child(5).passedSection:hover ~ .line {
+	 transform: translateY(200px);
+}
+ .nav__wrapper #side_nav .line {
+	 height: 50px;
+	 width: 3px;
+	 background-color: aliceblue;
+	 position: absolute;
+	 top: 0;
+	 right: 0;
+	 border-radius: 50px;
+	 transition: all 0.5s ease-in-out;
+}

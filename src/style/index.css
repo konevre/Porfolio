@@ -26,3 +26,4 @@ body {
     /* @apply scrollbar-hide; */
 }
 
+@import "fullpage.css"

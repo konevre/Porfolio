@@ -3,32 +3,23 @@ import { motion } from "framer-motion";
 import chevron from "../../resources/icons/chevron-right.svg";
 import { makeVariant } from "../../utils/utils";
 
-const MoreComponent = ({ title, styles }) => {
-    const [mouse, setMouse] = useState("rotate-0");
-
-    const handleMouseEnter = () => {
-        setMouse("rotate-90");
-    };
-    const handleMouseLeave = () => {
-        setMouse("rotate-0");
-    };
+const MoreComponent = ({ title, hash, effect }) => {
+    const onHover =
+        effect === "rotate"
+            ? "group-hover:rotate-90"
+            : "group-hover:translate-x-5";
     return (
-        <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: false }}
-            variants={makeVariant("5vh", 3, 0.2, 1)}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            className={`${styles} flex w-fit cursor-pointer items-center text-lg font-semibold text-custom-purple`}
+        <a
+            href={hash}
+            className="group flex w-fit cursor-pointer items-center text-lg font-semibold text-custom-purple hover:text-[#751E85]"
         >
-            <div>{title}</div>
+            {title}
             <img
                 src={chevron}
                 alt="chevron right"
-                className={`${mouse} ml-2 h-4 transition duration-500 ease-in-out`}
+                className={`ml-4 h-4 transition duration-500 ease-in-out ${onHover}`}
             />
-        </motion.div>
+        </a>
     );
 };
 

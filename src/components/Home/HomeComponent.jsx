@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
 
 import comp from "../../resources/icons/comp.svg";
@@ -18,7 +18,6 @@ import {
 
 const HomeComponent = ({ state }) => {
     const { animation, initial } = useHomeAnimation(state);
-
     const { wobbleText } = useWobble("Front-End Software Developer", 18);
 
     return (
@@ -29,17 +28,21 @@ const HomeComponent = ({ state }) => {
                     variants={textVariants}
                     whileInView={animation}
                     viewport={{ once: false }}
-                    className="flex basis-2/5 flex-col"
+                    className="flex basis-2/5 flex-col gap-y-8"
                 >
                     <div className="whitespace-nowrap text-3xl font-bold lg:text-6xl">
                         {wobbleText}
                     </div>
-                    <div className="mt-8 text-lg">
+                    <div className="text-lg">
                         Resolving design problems, building smart user
                         interfaces and useful interactions, developing rich web
                         applications and seamless web experiences.
                     </div>
-                    <MoreComponent title="About me" styles="mt-8 p-5 pl-0" />
+                    <MoreComponent
+                        title="About me"
+                        hash="#about"
+                        effect="rotate"
+                    />
                 </motion.div>
                 <div className="pointer-events-none relative flex h-full basis-3/5 items-center justify-center">
                     <motion.img
@@ -74,44 +77,3 @@ const HomeComponent = ({ state }) => {
 };
 
 export default HomeComponent;
-
-// const compAnimation = {
-//     hidden: { y: "-80vh", opacity: 0 },
-//     visible: {
-//         y: 0,
-//         opacity: 1,
-//         transition: {
-//             duration: 3,
-//             type: "spring",
-//             ease: "easeOut",
-//             delay: 0.1,
-//         },
-//     },
-// };
-// const rombAnimation = {
-//     hidden: { y: "-70vh", opacity: 0 },
-//     visible: {
-//         y: 0,
-//         opacity: 1,
-//         transition: {
-//             duration: 1.5,
-//             type: "spring",
-//             ease: "easeOut",
-//             delay: 0.2,
-//         },
-//     },
-// };
-
-// const textAnimation = {
-//     hidden: { y: "-30vh", opacity: 0 },
-//     visible: {
-//         y: 0,
-//         opacity: 1,
-//         transition: {
-//             duration: 2,
-//             type: "spring",
-//             ease: "easeInOut",
-//             delay: 0.1,
-//         },
-//     },
-// };

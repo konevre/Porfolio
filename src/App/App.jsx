@@ -1,6 +1,5 @@
-import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { useScroll } from "framer-motion";
+import React from "react";
+
 import ReactFullpage from "@fullpage/react-fullpage";
 
 import HeaderComponent from "../components/Header/HeaderComponent";
@@ -11,35 +10,29 @@ import AboutPage from "../pages/AboutPage";
 import SkillsPage from "../pages/SkillsPage";
 import ProjectsPage from "../pages/ProjectsPage";
 import ContactPage from "../pages/ContactPage";
+import ScrollUpComponent from "../components/Sidebar/ScrollUpComponent";
 
 const App = () => {
-    // // const { scrollYProgress } = useScroll();
-    // const [fullpage, setFullpage] = useState(null);
-    // // console.log(fullpage);
     return (
         <>
             <HeaderComponent />
             <SidebarComponent />
+            <ScrollUpComponent />
             <GitLinkComponent />
             <ReactFullpage
                 licenseKey={"32LN8-21K48-3LGJ9-JQP1J-SOPTO"}
                 anchors={["home", "about", "skills", "projects", "contact"]}
                 animateAnchor={true}
+                fixedElements="#scroll"
                 easingcss3={"cubic-bezier(0.88, 0, 0.265, 1)"}
                 scrollingSpeed={1200}
-                menu={"#myMenu"}
+                menu="#side_nav"
                 credits={{ enabled: false }}
-                onLeave={(origin, destination, direction) => {
-                    // console.log("onLeave event", {
-                    //     origin,
-                    //     destination,
-                    //     direction,
-                    // });
-                    // setFullpage({ origin, destination, direction });
-                }}
-                slid
+                controlArrows={false}
+                slidesNavigation={true}
+                slidesNavPosition="bottom"
+                onLeave={() => {}}
                 render={({ state, fullpageApi }) => {
-                    // setFullpage(state);
                     return (
                         <ReactFullpage.Wrapper>
                             <HomePage state={state} />

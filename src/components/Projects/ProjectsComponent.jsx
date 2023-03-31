@@ -13,9 +13,8 @@ const ProjectsComponent = () => {
     return (
         <div className="section" data-anchor="projects">
             <section>
-                <div className="slide">
-                    <HeroSlideComponent />
-                </div>
+                <HeroSlideComponent />
+
                 <div className="slide">
                     <TodoProjectComponent />
                 </div>
