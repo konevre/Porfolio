@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { firstRow, secondRow } from "../../img/images";
 import LinesComponent from "../UI/linesComponent";
 import { makeVariant } from "../../utils/utils";
-import useAboutAnimation from "../../hooks/useAboutAnimation";
+import useSectionAnimation from "../../hooks/useSectionAnimation";
 
 import {
     makeFirstVariants,
@@ -15,7 +15,7 @@ import {
 
 const SkillsComponent = ({ state }) => {
     const { wobbleText } = useWobble("Skills & Experience ", 19);
-    const { animation, initial } = useAboutAnimation(state, "skills");
+    const { animation, initial } = useSectionAnimation(state, "skills");
 
     const skillsFirst = firstRow.map((img, i) => {
         const delay = i > 1 ? +`0.${(i / 2) * 10}` : i === 0 ? "0" : "0.05";
@@ -60,7 +60,7 @@ const SkillsComponent = ({ state }) => {
                     variants={h3Variant(0.6)}
                     initial={initial}
                     whileInView={animation}
-                    className="text-xl font-light text-custom-grey"
+                    className="cursor-default text-xl font-light text-custom-grey"
                 >
                     A PROBLEM IS A CHANCE FOR YOU TO DO YOUR BEST.
                 </motion.h3>
@@ -84,7 +84,7 @@ const SkillsComponent = ({ state }) => {
                     variants={h3Variant(0.15)}
                     initial={initial}
                     whileInView={animation}
-                    className="mt-4 text-center text-lg font-normal"
+                    className="mt-4 cursor-default text-center text-lg font-normal"
                 >
                     The main area of expertise is front end development (client
                     side of the web).
@@ -97,7 +97,7 @@ const SkillsComponent = ({ state }) => {
                     variants={h3Variant(0.2)}
                     initial={initial}
                     whileInView={animation}
-                    className="w-1/2 text-center text-lg"
+                    className="w-1/2 cursor-default text-center text-lg"
                 >
                     HTML, CSS, JS, building small and medium web applications
                     with React, features, animations, and coding interactive
@@ -113,7 +113,7 @@ const SkillsComponent = ({ state }) => {
                     variants={h3Variant(0.25)}
                     initial={initial}
                     whileInView={animation}
-                    className="text-center text-lg"
+                    className="cursor-default text-center text-lg"
                 >
                     Visit my{" "}
                     <a
@@ -124,10 +124,10 @@ const SkillsComponent = ({ state }) => {
                     </a>{" "}
                     for more details
                 </motion.p>
-                <div className="mt-5 flex justify-center gap-x-14">
+                <div className="mt-5 flex cursor-default justify-center gap-x-14">
                     {skillsFirst}
                 </div>
-                <div className="mt-5 flex justify-center gap-x-16">
+                <div className="mt-5 flex cursor-default justify-center gap-x-16">
                     {skillsSecond}
                 </div>
             </motion.section>

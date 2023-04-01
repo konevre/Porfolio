@@ -21,8 +21,8 @@ const App = () => {
             <GitLinkComponent />
             <ReactFullpage
                 licenseKey={"32LN8-21K48-3LGJ9-JQP1J-SOPTO"}
-                anchors={["home", "about", "skills", "projects", "contact"]}
-                animateAnchor={true}
+                // anchors={["home", "about", "skills", "projects", "contact"]}
+                // animateAnchor={true}
                 fixedElements="#scroll"
                 easingcss3={"cubic-bezier(0.88, 0, 0.265, 1)"}
                 scrollingSpeed={1200}
@@ -32,13 +32,14 @@ const App = () => {
                 slidesNavigation={true}
                 slidesNavPosition="bottom"
                 onLeave={() => {}}
+                onSlideLeave={() => {}}
                 render={({ state, fullpageApi }) => {
                     return (
                         <ReactFullpage.Wrapper>
                             <HomePage state={state} />
                             <AboutPage state={state} />
                             <SkillsPage state={state} />
-                            <ProjectsPage />
+                            <ProjectsPage state={state} />
                             <ContactPage state={state} />
                         </ReactFullpage.Wrapper>
                     );

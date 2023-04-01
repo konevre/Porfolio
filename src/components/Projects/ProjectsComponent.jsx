@@ -9,19 +9,17 @@ import LinesComponent from "../UI/linesComponent";
 import TodoProjectComponent from "./Slides/TodoProjectComponent";
 import WeatherProject from "./Slides/WeatherProject";
 
-const ProjectsComponent = () => {
+const ProjectsComponent = ({ state }) => {
     return (
         <div className="section" data-anchor="projects">
-            <section>
-                <HeroSlideComponent />
+            {/* <section className="max-w-container"> */}
+            <HeroSlideComponent state={state} />
 
-                <div className="slide">
-                    <TodoProjectComponent />
-                </div>
-                <div className="slide">
-                    <WeatherProject />
-                </div>
-            </section>
+            <TodoProjectComponent state={state} />
+
+            <WeatherProject state={state} />
+
+            {/* </section> */}
             <LinesComponent dir="right" />
         </div>
     );

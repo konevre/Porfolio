@@ -9,7 +9,7 @@ const MoreComponent = ({ title, hash, effect }) => {
             ? "group-hover:rotate-90"
             : "group-hover:translate-x-5";
     return (
-        <a
+        <motion.a
             href={hash}
             className="group flex w-fit cursor-pointer items-center text-lg font-semibold text-custom-purple hover:text-[#751E85]"
         >
@@ -19,7 +19,7 @@ const MoreComponent = ({ title, hash, effect }) => {
                 alt="chevron right"
                 className={`ml-4 h-4 transition duration-500 ease-in-out ${onHover}`}
             />
-        </a>
+        </motion.a>
     );
 };
 

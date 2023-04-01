@@ -30,11 +30,11 @@ export const makeSecondVariants = (delay) => {
                 delay,
             },
         },
-        moveInitDown: {
+        initialDown: {
             y: "10vh",
             opacity: 0,
         },
-        moveInitUp: {
+        initialUp: {
             y: "0",
             opacity: 0,
         },
@@ -72,11 +72,11 @@ export const makeFirstVariants = (delay) => {
                 delay: 0,
             },
         },
-        moveInitDown: {
+        initialDown: {
             y: "10vh",
             opacity: 0,
         },
-        moveInitUp: {
+        initialUp: {
             y: "0",
             opacity: 1,
         },
@@ -115,11 +115,11 @@ export const h3Variant = (delay) => {
                 delay,
             },
         },
-        moveInitDown: {
+        initialDown: {
             y: "2vh",
             opacity: 0,
         },
-        moveInitUp: {
+        initialUp: {
             y: "0",
             opacity: 1,
         },

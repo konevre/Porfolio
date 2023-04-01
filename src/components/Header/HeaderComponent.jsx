@@ -4,9 +4,13 @@ import icon from "../../resources/icons/logo.svg";
 
 const HeaderComponent = () => {
     return (
-        <div className="sticky top-0 z-10 flex w-full justify-between bg-custom-black px-6 py-6 md:fixed md:bg-inherit md:p-12">
+        <div className="top-0  z-10 flex w-full cursor-default justify-between bg-custom-black px-6 py-6 md:fixed md:bg-inherit md:p-12">
             <div className="flex items-center gap-x-1">
-                <img src={icon} alt="icon" className="h-5 md:h-6" />
+                <img
+                    src={icon}
+                    alt="icon"
+                    className="pointer-events-none h-5 md:h-6"
+                />
                 <div className="text-2xl font-semibold tracking-widest md:text-3xl">
                     KONEVRE
                 </div>

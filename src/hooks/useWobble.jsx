@@ -14,14 +14,14 @@ const useWobble = (text, br) => {
             <span
                 onMouseOver={() => handleMouseOver(i)}
                 key={`${letter}${i}`}
-                className={`${activeLetter} inline-block`}
+                className={`${activeLetter} inline-block cursor-default`}
             >
                 {letter}
             </span>
         ) : i === br ? (
             <br key={`${letter}${i}`} />
         ) : (
-            " "
+            <span className="cursor-default"> </span>
         );
     });
 

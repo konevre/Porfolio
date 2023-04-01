@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 
 import cube from "../../resources/icons/contact/white_cube.png";
-import useAboutAnimation from "../../hooks/useAboutAnimation";
+import useSectionAnimation from "../../hooks/useSectionAnimation";
 
 import GlobeComponent from "./GlobeComponent";
 
@@ -28,11 +28,11 @@ export const globeVariants = {
             delay: 0,
         },
     },
-    moveInitDown: {
+    initialDown: {
         opacity: 0,
         scale: 0.5,
     },
-    moveInitUp: {
+    initialUp: {
         opacity: 0,
         scale: 1,
     },
@@ -59,20 +59,20 @@ export const cubeVariants = {
             delay: 0,
         },
     },
-    moveInitDown: {
+    initialDown: {
         y: "-5vh",
         opacity: 1,
     },
-    moveInitUp: {
+    initialUp: {
         opacity: 1,
     },
 };
 
 const ContactComponent = ({ state }) => {
-    const { animation, initial } = useAboutAnimation(state, "contact");
+    const { animation, initial } = useSectionAnimation(state, "contact");
     return (
         <div data-anchor="contact" className="section">
-            <section className="relative flex h-screen max-w-container items-center">
+            <section className="relative flex h-screen max-w-container cursor-default items-center">
                 <motion.div
                     variants={globeVariants}
                     whileInView={animation}

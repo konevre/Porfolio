@@ -10,8 +10,9 @@ const ScrollUpComponent = () => {
         about: "#skills",
         skills: "#projects",
         projects: "#contact",
-        "projects/1": "#contact",
-        "projects/2": "#contact",
+        "projects/hero": "#contact",
+        "projects/todo": "#contact",
+        "projects/weather": "#contact",
         contact: "#home",
     };
     useEffect(() => {
@@ -32,12 +33,12 @@ const ScrollUpComponent = () => {
                 <a
                     id="scroll"
                     href={hashObj[hash]}
-                    className="fixed right-0 bottom-20 z-10 hidden cursor-pointer flex-col lg:flex"
+                    className="group fixed right-0 bottom-20 z-10 hidden cursor-pointer flex-col lg:flex"
                 >
                     <img
                         src={chevronUp}
                         alt="chevron"
-                        className={` h-3 transition duration-500 ease-in-out`}
+                        className={`h-3 transition duration-500 ease-in-out group-hover:-translate-y-5`}
                     />
                     <div className="mt-10 -rotate-90 text-sm text-[#6B6F73]">
                         Back To Top
@@ -46,7 +47,7 @@ const ScrollUpComponent = () => {
             ) : (
                 <a
                     href={hashObj[hash]}
-                    className="fixed right-0 bottom-20 z-10 hidden flex-col lg:flex"
+                    className="group fixed right-0 bottom-20 z-30 hidden cursor-pointer flex-col lg:flex"
                 >
                     <div className="mb-10 -rotate-90 text-sm text-[#6B6F73]">
                         Scroll Down
@@ -54,7 +55,7 @@ const ScrollUpComponent = () => {
                     <img
                         src={chevronDown}
                         alt="chevron"
-                        className={`h-3 transition duration-500 ease-in-out`}
+                        className={`h-3 transition duration-500 ease-in-out group-hover:translate-y-5`}
                     />
                 </a>
             )}

@@ -27,13 +27,12 @@ const HomeComponent = ({ state }) => {
                     initial={initial}
                     variants={textVariants}
                     whileInView={animation}
-                    viewport={{ once: false }}
                     className="flex basis-2/5 flex-col gap-y-8"
                 >
                     <div className="whitespace-nowrap text-3xl font-bold lg:text-6xl">
                         {wobbleText}
                     </div>
-                    <div className="text-lg">
+                    <div className="cursor-default text-lg">
                         Resolving design problems, building smart user
                         interfaces and useful interactions, developing rich web
                         applications and seamless web experiences.
@@ -49,7 +48,6 @@ const HomeComponent = ({ state }) => {
                         initial={initial}
                         variants={compVariants}
                         whileInView={animation}
-                        viewport={{ once: false }}
                         src={comp}
                         alt="comp"
                         className="w-[35em]"
@@ -65,10 +63,9 @@ const HomeComponent = ({ state }) => {
                     initial={initial}
                     variants={rombVariants}
                     whileInView={animation}
-                    viewport={{ once: false }}
                     src={romb}
                     alt="romb"
-                    className="absolute bottom-5 left-1/3 hidden md:block"
+                    className="pointer-events-none absolute bottom-5 left-1/3 hidden md:block"
                 />
             </section>
             <LinesComponent dir="left" />

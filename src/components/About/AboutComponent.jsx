@@ -7,7 +7,7 @@ import romb from "../../resources/icons/romb2.png";
 import cube from "../../resources/icons/cube.png";
 import me from "../../resources/icons/me.png";
 import LinesComponent from "../UI/linesComponent";
-import useAboutAnimation from "../../hooks/useAboutAnimation";
+import useSectionAnimation from "../../hooks/useSectionAnimation";
 
 import {
     cubeVariants,
@@ -18,7 +18,7 @@ import {
 
 const AboutComponent = ({ state }) => {
     const { wobbleText } = useWobble("Hi, I'm Roman Web Developer", 13);
-    const { initial, animation } = useAboutAnimation(state, "about");
+    const { initial, animation } = useSectionAnimation(state, "about");
 
     return (
         <div className="section" data-anchor="about">
@@ -34,7 +34,7 @@ const AboutComponent = ({ state }) => {
                     variants={rombVariants}
                     src={romb}
                     alt="romb"
-                    className="absolute top-20 left-[55%]"
+                    className="pointer-events-none absolute top-20 left-[55%]"
                 />
                 <motion.img
                     whileInView={animation}
@@ -42,7 +42,7 @@ const AboutComponent = ({ state }) => {
                     variants={cubeVariants}
                     src={cube}
                     alt="cube"
-                    className="absolute left-32 bottom-16"
+                    className="pointer-events-none absolute left-32 bottom-16"
                 />
                 <div className="flex">
                     <motion.div
@@ -54,7 +54,7 @@ const AboutComponent = ({ state }) => {
                         <h2 className="whitespace-nowrap text-3xl font-bold lg:text-6xl">
                             {wobbleText}
                         </h2>
-                        <h3 className="mt-4 text-2xl font-light text-custom-grey">
+                        <h3 className="mt-4 cursor-default text-2xl font-light text-custom-grey">
                             Front End Developer / JavaScript Fan / React Admirer
                         </h3>
                     </motion.div>
@@ -64,17 +64,17 @@ const AboutComponent = ({ state }) => {
                         variants={textTwoVariants}
                         className="flex basis-[46%] flex-col justify-center gap-y-3 text-lg font-normal"
                     >
-                        <p className="text-lg">
+                        <p className="cursor-default text-lg">
                             Professionally connected with the web development
                             industry.
                         </p>
-                        <p className="text-lg">
+                        <p className="cursor-default text-lg">
                             Problem solver, well-organised person, loyal
                             employee with high attention to detail. Fan of
                             Boxing, outdoor activities, video games, and coding
                             of course.
                         </p>
-                        <p className="text-lg">
+                        <p className="cursor-default text-lg">
                             Interested in the entire frontend spectrum and
                             working on ambitious projects with interesting
                             people.
