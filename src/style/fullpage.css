@@ -18,6 +18,8 @@
     height: 6px;
 }
 
+
+
 .nav__wrapper {
 	 display: none;
 }
@@ -61,31 +63,31 @@
 	 color: aliceblue;
 	 transition: all 0.5s ease-in-out;
 }
- .nav__wrapper #side_nav li:first-child.passedSection:hover ~ .line {
+ .nav__wrapper #side_nav li:first-child.hoverSection:hover ~ .line {
 	 transform: translateY(0);
 }
  .nav__wrapper #side_nav li:nth-child(2):hover ~ .line, .nav__wrapper #side_nav li:nth-child(2).active ~ .line {
 	 transform: translateY(50px);
 }
- .nav__wrapper #side_nav li:nth-child(2).passedSection:hover ~ .line {
+ .nav__wrapper #side_nav li:nth-child(2).hoverSection:hover ~ .line {
 	 transform: translateY(50px);
 }
  .nav__wrapper #side_nav li:nth-child(3):hover ~ .line, .nav__wrapper #side_nav li:nth-child(3).active ~ .line {
 	 transform: translateY(100px);
 }
- .nav__wrapper #side_nav li:nth-child(3).passedSection:hover ~ .line {
+ .nav__wrapper #side_nav li:nth-child(3).hoverSection:hover ~ .line {
 	 transform: translateY(100px);
 }
  .nav__wrapper #side_nav li:nth-child(4):hover ~ .line, .nav__wrapper #side_nav li:nth-child(4).active ~ .line {
 	 transform: translateY(150px);
 }
- .nav__wrapper #side_nav li:nth-child(4).passedSection:hover ~ .line {
+ .nav__wrapper #side_nav li:nth-child(4).hoverSection:hover ~ .line {
 	 transform: translateY(150px);
 }
  .nav__wrapper #side_nav li:nth-child(5):hover ~ .line, .nav__wrapper #side_nav li:nth-child(5).active ~ .line {
 	 transform: translateY(200px);
 }
- .nav__wrapper #side_nav li:nth-child(5).passedSection:hover ~ .line {
+ .nav__wrapper #side_nav li:nth-child(5).hoverSection:hover ~ .line {
 	 transform: translateY(200px);
 }
  .nav__wrapper #side_nav .line {

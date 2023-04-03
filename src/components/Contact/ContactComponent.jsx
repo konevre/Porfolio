@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 
 import cube from "../../resources/icons/contact/white_cube.png";
@@ -71,18 +71,18 @@ export const cubeVariants = {
 const ContactComponent = ({ state }) => {
     const { animation, initial } = useSectionAnimation(state, "contact");
     return (
-        <div data-anchor="contact" className="section">
-            <section className="relative flex h-screen max-w-container cursor-default items-center">
+        <div data-anchor="contact" className="section fp-auto-height">
+            <section className="relative mx-auto flex max-w-container cursor-default flex-col-reverse items-center p-8 lg:h-screen lg:flex-row">
                 <motion.div
                     variants={globeVariants}
                     whileInView={animation}
                     initial={initial}
-                    className="relative basis-2/5"
+                    className="relative flex basis-3/5 justify-center"
                 >
                     <GlobeComponent state={state} />
                 </motion.div>
-                <div className="z-10 flex basis-[23%] flex-col gap-y-5">
-                    <p className="text-lg">
+                <div className="z-10 flex basis-full flex-col gap-y-5 md:basis-[30%] ">
+                    <p className="w-[90%] text-lg">
                         What would you do if you had a software expert available
                         at your fingertips?
                     </p>
@@ -90,15 +90,25 @@ const ContactComponent = ({ state }) => {
                         Want to start new project? Or just say hey. <br />
                         You can also follow me on{" "}
                         <a
-                            href="#"
+                            href="https://www.instagram.com/konevre"
                             className="text-lg text-amber-400 hover:underline hover:underline-offset-4"
                         >
                             Instagram
                         </a>{" "}
+                        or{" "}
+                        <a
+                            href="https://t.me/konevre"
+                            className="text-lg text-[#751E85] hover:underline hover:underline-offset-4"
+                        >
+                            Telegram
+                        </a>{" "}
                     </p>
-                    <h2 className="cursor-pointer text-3xl font-bold duration-300 hover:text-amber-300 hover:ease-in-out">
+                    <a
+                        href="mailto:konevre@mail.ru"
+                        className="cursor-pointer text-3xl font-bold duration-300 hover:text-amber-300 hover:ease-in-out"
+                    >
                         konevre@mail.ru
-                    </h2>
+                    </a>
                 </div>
                 <motion.img
                     src={cube}
@@ -106,7 +116,7 @@ const ContactComponent = ({ state }) => {
                     variants={cubeVariants}
                     whileInView={animation}
                     initial={initial}
-                    className="absolute bottom-24 right-12"
+                    className="absolute bottom-24 right-12 hidden lg:block"
                 />
             </section>
         </div>

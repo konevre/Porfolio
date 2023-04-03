@@ -21,11 +21,11 @@ const App = () => {
             <GitLinkComponent />
             <ReactFullpage
                 licenseKey={"32LN8-21K48-3LGJ9-JQP1J-SOPTO"}
-                // anchors={["home", "about", "skills", "projects", "contact"]}
-                // animateAnchor={true}
+                animateAnchor={true}
                 fixedElements="#scroll"
                 easingcss3={"cubic-bezier(0.88, 0, 0.265, 1)"}
                 scrollingSpeed={1200}
+                responsiveWidth={1023}
                 menu="#side_nav"
                 credits={{ enabled: false }}
                 controlArrows={false}

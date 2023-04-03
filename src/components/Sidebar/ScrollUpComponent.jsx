@@ -22,9 +22,7 @@ const ScrollUpComponent = () => {
         });
 
         return () => {
-            window.removeEventListener("hashchange", () => {
-                const hash = window.location.hash.slice(1);
-            });
+            window.removeEventListener("hashchange", () => {});
         };
     }, []);
     return (
@@ -33,7 +31,7 @@ const ScrollUpComponent = () => {
                 <a
                     id="scroll"
                     href={hashObj[hash]}
-                    className="group fixed right-0 bottom-20 z-10 hidden cursor-pointer flex-col lg:flex"
+                    className="group fixed right-0 bottom-10 z-10 hidden cursor-pointer flex-col lg:flex xl:bottom-20"
                 >
                     <img
                         src={chevronUp}
@@ -47,7 +45,7 @@ const ScrollUpComponent = () => {
             ) : (
                 <a
                     href={hashObj[hash]}
-                    className="group fixed right-0 bottom-20 z-30 hidden cursor-pointer flex-col lg:flex"
+                    className="group fixed right-0 bottom-10 z-30 hidden cursor-pointer flex-col lg:flex xl:bottom-20"
                 >
                     <div className="mb-10 -rotate-90 text-sm text-[#6B6F73]">
                         Scroll Down

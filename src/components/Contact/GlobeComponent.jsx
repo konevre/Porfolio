@@ -1,8 +1,22 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import Globe from "react-globe.gl";
 
-const GlobeComponent = ({ state }) => {
+const GlobeComponent = () => {
     const globeEl = useRef();
+    const globeSize =
+        window.innerWidth <= 320
+            ? 290
+            : window.innerWidth > 1200
+            ? 750
+            : window.innerWidth > 500
+            ? 500
+            : 300;
+    const [size, setSize] = useState(globeSize);
+    useEffect(() => {
+        window.addEventListener("resize", (event) => {
+            setSize(globeSize);
+        });
+    }, []);
 
     useEffect(() => {
         globeEl.current.pointOfView(
@@ -37,14 +51,13 @@ const GlobeComponent = ({ state }) => {
             : `
     <div style="background-color: #333333; padding: 0.5em; font-weight: 300; font-size: 0.9em; border-radius: 0.25rem; ">Born in ${d.name}, Russia</div>
 `;
-
     return (
         <Globe
             ref={globeEl}
             backgroundColor="#141416"
             atmosphereColor="#141416"
-            width={750}
-            height={750}
+            width={size}
+            height={size}
             globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
             labelsData={[
                 {

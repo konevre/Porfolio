@@ -1,4 +1,11 @@
+import { useMediaQuery } from "react-responsive";
+
 const useSectionAnimation = (state, section, slide = null) => {
+    const isLessThan1024 = useMediaQuery({ query: "(max-width: 1024px)" });
+    if (isLessThan1024) {
+        return { initial: {}, animation: {} };
+    }
+
     const directions = {
         up: { initial: "initialDown", animation: "onLeaveUp" },
         right: { initial: "initialLeft", animation: "onLeaveRight" },
@@ -13,12 +20,7 @@ const useSectionAnimation = (state, section, slide = null) => {
     const isLeaveSection =
         state.initialized && state.origin?.anchor === section;
 
-    const isLeaveSlide =
-        state.initialized &&
-        state.direction === "horizontalNav" &&
-        state.origin?.anchor === slide;
-
-    console.log(isLeaveSlide);
+    const isLeaveSlide = state.initialized && state.origin?.anchor === slide;
 
     const animation = isLeaveSection
         ? directionAnimation
@@ -38,25 +40,3 @@ const useSectionAnimation = (state, section, slide = null) => {
 };
 
 export default useSectionAnimation;
-
-// const useSectionAnimation = (state, section) => {
-//     const leaveAbout = state.initialized && state.origin?.anchor === section;
-
-//     const isMovingDown = state?.direction === "down";
-//     const animation = leaveAbout
-//         ? isMovingDown
-//             ? "onLeaveDown"
-//             : "onLeaveUp"
-//         : "moveTo";
-
-//     const initial = isMovingDown ? "initialUp" : "initialDown";
-
-//     console.log(initial, animation);
-
-//     return {
-//         initial,
-//         animation,
-//     };
-// };
-
-// export default useSectionAnimation;

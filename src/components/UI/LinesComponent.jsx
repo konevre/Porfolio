@@ -5,14 +5,14 @@ import lines from "../../resources/icons/lines.svg";
 const LinesComponent = ({ dir }) => {
     const position =
         dir === "right"
-            ? "-bottom-[60%] -right-[40%] rotate-180"
-            : "-bottom-[58%] -left-[38%]";
+            ? "-bottom-[58%] -right-[600px] md:-bottom-[450px] rotate-180 hidden xl:block"
+            : "-bottom-[58%] -left-[600px] md:-bottom-[450px]";
 
     return (
         <img
             src={lines}
             alt="lines"
-            className={`${position} absolute -z-10 blur`}
+            className={`${position} absolute -z-10 min-h-[887px] min-w-[900px] opacity-50 blur lg:opacity-100`}
         />
     );
 };

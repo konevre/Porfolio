@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-import useWobble from "../../hooks/useWobble";
+import WobbleTitleComponent from "../UI/WobbleTitleComponent";
 
 import romb from "../../resources/icons/romb2.png";
 import cube from "../../resources/icons/cube.png";
@@ -17,16 +17,15 @@ import {
 } from "../../utils/variants/aboutVariants";
 
 const AboutComponent = ({ state }) => {
-    const { wobbleText } = useWobble("Hi, I'm Roman Web Developer", 13);
     const { initial, animation } = useSectionAnimation(state, "about");
 
     return (
-        <div className="section" data-anchor="about">
-            <section className="relative flex h-screen snap-center snap-always items-center justify-center p-8">
+        <div className="section fp-auto-height" data-anchor="about">
+            <section className="relative mx-auto flex max-w-container items-center justify-center overflow-x-hidden p-8 md:h-screen">
                 <img
                     src={me}
                     alt="me"
-                    className="absolute top-44 left-[31%] -z-10 h-1/2 brightness-[30%] drop-shadow-2xl grayscale  sepia-[30%]"
+                    className="absolute top-0 bottom-0 left-0 right-0 -z-10 m-auto ml-[30%] w-[400px] brightness-[30%] drop-shadow-2xl grayscale sepia-[30%]"
                 />
                 <motion.img
                     whileInView={animation}
@@ -34,7 +33,7 @@ const AboutComponent = ({ state }) => {
                     variants={rombVariants}
                     src={romb}
                     alt="romb"
-                    className="pointer-events-none absolute top-20 left-[55%]"
+                    className="pointer-events-none absolute top-20 left-[55%] hidden lg:block"
                 />
                 <motion.img
                     whileInView={animation}
@@ -42,19 +41,20 @@ const AboutComponent = ({ state }) => {
                     variants={cubeVariants}
                     src={cube}
                     alt="cube"
-                    className="pointer-events-none absolute left-32 bottom-16"
+                    className="pointer-events-none absolute left-32 bottom-16  hidden lg:block"
                 />
-                <div className="flex">
+                <div className="flex flex-col justify-between gap-y-3 md:flex-row lg:justify-start">
                     <motion.div
                         whileInView={animation}
                         initial={initial}
                         variants={textOneVariants}
                         className="basis-[47%]"
                     >
-                        <h2 className="whitespace-nowrap text-3xl font-bold lg:text-6xl">
-                            {wobbleText}
-                        </h2>
-                        <h3 className="mt-4 cursor-default text-2xl font-light text-custom-grey">
+                        <div className="w-[300px] lg:w-[400px]">
+                            <WobbleTitleComponent text="Hi, I'm Roman Web Developer" />
+                        </div>
+
+                        <h3 className="mt-4 mb-3 cursor-default text-base font-light text-custom-grey xl:text-2xl">
                             Front End Developer / JavaScript Fan / React Admirer
                         </h3>
                     </motion.div>
@@ -64,17 +64,17 @@ const AboutComponent = ({ state }) => {
                         variants={textTwoVariants}
                         className="flex basis-[46%] flex-col justify-center gap-y-3 text-lg font-normal"
                     >
-                        <p className="cursor-default text-lg">
+                        <p className="cursor-default text-base xl:text-lg">
                             Professionally connected with the web development
                             industry.
                         </p>
-                        <p className="cursor-default text-lg">
+                        <p className="cursor-default text-base xl:text-lg">
                             Problem solver, well-organised person, loyal
                             employee with high attention to detail. Fan of
                             Boxing, outdoor activities, video games, and coding
                             of course.
                         </p>
-                        <p className="cursor-default text-lg">
+                        <p className="cursor-default text-base xl:text-lg">
                             Interested in the entire frontend spectrum and
                             working on ambitious projects with interesting
                             people.

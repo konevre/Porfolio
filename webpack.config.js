@@ -12,7 +12,7 @@ module.exports = {
         rules: [
             {
                 test: /\.css$/,
-                // exclude: /node_modules/,
+                exclude: /node_modules/,
                 use: ["style-loader", "css-loader", "postcss-loader"],
             },
             {
@@ -33,7 +33,10 @@ module.exports = {
         ],
     },
     plugins: [
-        new HTMLWebpackPlugin({ template: "./src/index.html" }),
+        new HTMLWebpackPlugin({
+            template: "./src/index.html",
+            favicon: "./src/favicon.ico",
+        }),
         new CleanWebpackPlugin(),
     ],
     resolve: {

@@ -1,38 +1,31 @@
-import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
-// import { Link } from "react-router-dom";
-import { Link } from "react-scroll";
-
-import ScrollDownComponent from "./ScrollDownComponent";
-import ScrollUpComponent from "./ScrollUpComponent";
+import React from "react";
 
 const SidebarComponent = () => {
-    // TODO - refactor tags
     return (
         <>
             <nav className="nav__wrapper fixed right-10 top-1/3 z-10 hidden gap-x-3 lg:flex">
                 <ul id="side_nav">
-                    <li data-menuanchor="home" className="">
+                    <li data-menuanchor="home" className="hoverSection">
                         <a href="#home" title="home">
                             00
                         </a>
                     </li>
-                    <li data-menuanchor="about" className="">
+                    <li data-menuanchor="about" className="hoverSection">
                         <a href="#about" title="about">
                             01
                         </a>
                     </li>
-                    <li data-menuanchor="skills" className="">
+                    <li data-menuanchor="skills" className="hoverSection">
                         <a href="#skills" title="skills">
                             02
                         </a>
                     </li>
-                    <li data-menuanchor="projects" className="">
+                    <li data-menuanchor="projects" className="hoverSection">
                         <a href="#projects" title="portfolio">
                             03
                         </a>
                     </li>
-                    <li data-menuanchor="contact" className="">
+                    <li data-menuanchor="contact" className="hoverSection">
                         <a href="#contact" title="contact">
                             04
                         </a>
@@ -40,10 +33,6 @@ const SidebarComponent = () => {
                     <div className="line"></div>
                 </ul>
             </nav>
-            {/* TODO */}
-
-            {/* <ScrollUpComponent fullpage={fullpage} /> */}
-            {/* <ScrollDownComponent /> */}
         </>
     );
 };

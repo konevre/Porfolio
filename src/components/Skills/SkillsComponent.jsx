@@ -1,20 +1,18 @@
 import React from "react";
-import useWobble from "../../hooks/useWobble";
 import { motion } from "framer-motion";
 
 import { firstRow, secondRow } from "../../img/images";
 import LinesComponent from "../UI/linesComponent";
-import { makeVariant } from "../../utils/utils";
 import useSectionAnimation from "../../hooks/useSectionAnimation";
-
 import {
     makeFirstVariants,
     makeSecondVariants,
     h3Variant,
 } from "../../utils/variants/skillsVariants";
 
+import WobbleTitleComponent from "../UI/WobbleTitleComponent";
+
 const SkillsComponent = ({ state }) => {
-    const { wobbleText } = useWobble("Skills & Experience ", 19);
     const { animation, initial } = useSectionAnimation(state, "skills");
 
     const skillsFirst = firstRow.map((img, i) => {
@@ -24,14 +22,14 @@ const SkillsComponent = ({ state }) => {
                 initial={initial}
                 whileInView={animation}
                 variants={makeFirstVariants(delay)}
-                className="flex flex-col gap-y-2"
+                className="flex w-[33%] flex-col items-center gap-y-3 sm:w-[20%] md:w-auto"
             >
                 <img
                     src={img.src}
                     alt="skill"
-                    className="h-[4.5rem] w-[4.5rem]"
+                    className="h-10 w-12 md:h-12 xl:h-[70px] xl:w-[70px]"
                 />
-                <div className="text-center text-lg font-normal">
+                <div className="text-center text-base font-normal md:text-lg">
                     {img.title}
                 </div>
             </motion.div>
@@ -44,60 +42,55 @@ const SkillsComponent = ({ state }) => {
                 initial={initial}
                 whileInView={animation}
                 variants={makeSecondVariants(delay)}
-                className="flex flex-col gap-y-2"
+                className="flex w-[33%] flex-col items-center gap-y-3 sm:w-[20%] md:w-auto"
             >
-                <img src={img.src} alt="skill" className="h-20 w-20 " />
-                <div className="text-center text-lg font-normal">
+                <img
+                    src={img.src}
+                    alt="skill"
+                    className="h-10 w-12 md:h-12 xl:h-[70px] xl:w-[70px]"
+                />
+                <div className="text-center text-base font-normal md:text-lg">
                     {img.title}
                 </div>
             </motion.div>
         );
     });
     return (
-        <div data-anchor="skills" className="section">
-            <motion.section className="relative flex h-screen flex-col items-center justify-center gap-y-3 p-8">
+        <div data-anchor="skills" className="section fp-auto-height mt-24">
+            <motion.section className="relative mx-auto flex max-w-container flex-col justify-center gap-y-3 overflow-hidden p-8 md:items-center lg:h-screen">
                 <motion.h3
                     variants={h3Variant(0.6)}
                     initial={initial}
                     whileInView={animation}
-                    className="cursor-default text-xl font-light text-custom-grey"
+                    className="cursor-default text-base font-light text-custom-grey md:text-lg xl:text-xl"
                 >
                     A PROBLEM IS A CHANCE FOR YOU TO DO YOUR BEST.
                 </motion.h3>
-                <motion.h2
-                    // initial="hidden"
-                    // whileInView="visible"
-                    // viewport={{ once: false }}
-                    // variants={makeVariant("2vh", 1, 0.1)}
+                <motion.div
                     variants={h3Variant(0.1)}
                     initial={initial}
                     whileInView={animation}
-                    className="whitespace-nowrap text-center text-3xl font-bold uppercase lg:text-6xl"
                 >
-                    {wobbleText}
-                </motion.h2>
+                    <WobbleTitleComponent
+                        text="Skills & Experience "
+                        br={19}
+                        isCenter={true}
+                    />
+                </motion.div>
                 <motion.p
-                    // initial="hidden"
-                    // whileInView="visible"
-                    // viewport={{ once: false }}
-                    // variants={makeVariant("2vh", 1, 0.15)}
                     variants={h3Variant(0.15)}
                     initial={initial}
                     whileInView={animation}
-                    className="mt-4 cursor-default text-center text-lg font-normal"
+                    className="mt-4 cursor-default text-base font-normal md:text-center md:text-lg xl:text-xl"
                 >
                     The main area of expertise is front end development (client
                     side of the web).
                 </motion.p>
                 <motion.p
-                    // initial="hidden"
-                    // whileInView="visible"
-                    // viewport={{ once: false }}
-                    // variants={makeVariant("2vh", 1, 0.2)}
                     variants={h3Variant(0.2)}
                     initial={initial}
                     whileInView={animation}
-                    className="w-1/2 cursor-default text-center text-lg"
+                    className="cursor-default text-base md:text-center md:text-lg lg:w-1/2 xl:text-xl"
                 >
                     HTML, CSS, JS, building small and medium web applications
                     with React, features, animations, and coding interactive
@@ -106,28 +99,22 @@ const SkillsComponent = ({ state }) => {
                     Django
                 </motion.p>
                 <motion.p
-                    // initial="hidden"
-                    // whileInView="visible"
-                    // viewport={{ once: false }}
-                    // variants={makeVariant("2vh", 1, 0.25)}
                     variants={h3Variant(0.25)}
                     initial={initial}
                     whileInView={animation}
-                    className="cursor-default text-center text-lg"
+                    className="cursor-default text-base md:text-center md:text-lg xl:text-xl"
                 >
                     Visit my{" "}
                     <a
                         href="#"
-                        className="text-lg text-amber-400 hover:underline hover:underline-offset-4"
+                        className="text-base text-amber-400 hover:underline hover:underline-offset-4 md:text-lg xl:text-xl"
                     >
                         Linkedin
                     </a>{" "}
                     for more details
                 </motion.p>
-                <div className="mt-5 flex cursor-default justify-center gap-x-14">
+                <div className="justify-evently mt-5 flex cursor-default flex-wrap gap-y-3 md:max-w-[800px] md:justify-center md:gap-x-14 lg:gap-y-5 xl:max-w-[900px]">
                     {skillsFirst}
-                </div>
-                <div className="mt-5 flex cursor-default justify-center gap-x-16">
                     {skillsSecond}
                 </div>
             </motion.section>
