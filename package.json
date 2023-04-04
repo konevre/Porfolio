@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "private": false,
-  "homepage": "https://konevre.github.io/Portfolio/",
+  "homepage": "https://konevre.github.io/Portfolio",
 
   "scripts": {
     "start": "webpack-dev-server --open",
