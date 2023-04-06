@@ -35,14 +35,6 @@ const AboutComponent = ({ state }) => {
                     alt="romb"
                     className="pointer-events-none absolute top-20 left-[55%] hidden lg:block"
                 />
-                <motion.img
-                    whileInView={animation}
-                    initial={initial}
-                    variants={cubeVariants}
-                    src={cube}
-                    alt="cube"
-                    className="pointer-events-none absolute left-32 bottom-16  hidden lg:block"
-                />
                 <div className="flex flex-col justify-between gap-y-3 md:flex-row lg:justify-start">
                     <motion.div
                         whileInView={animation}
@@ -82,6 +74,14 @@ const AboutComponent = ({ state }) => {
                     </motion.div>
                 </div>
             </section>
+            <motion.img
+                whileInView={animation}
+                initial={initial}
+                variants={cubeVariants}
+                src={cube}
+                alt="cube"
+                className="pointer-events-none absolute left-52 bottom-20  hidden lg:block"
+            />
             <LinesComponent dir="right" />
         </div>
     );

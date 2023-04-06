@@ -8,7 +8,7 @@ import WeatherProject from "./Slides/WeatherProject";
 
 const ProjectsComponent = ({ state }) => {
     return (
-        <div className="section" data-anchor="projects">
+        <div className="section fp-auto-height" data-anchor="projects">
             <section className="mx-auto flex max-w-container">
                 <HeroSlideComponent state={state} />
                 <TodoProjectComponent state={state} />

@@ -29,6 +29,7 @@ const App = () => {
                 menu="#side_nav"
                 credits={{ enabled: false }}
                 controlArrows={false}
+                scrollOverflow={false}
                 slidesNavigation={true}
                 slidesNavPosition="bottom"
                 onLeave={() => {}}
